@@ -25,6 +25,10 @@ kotlin {
             }
         }
     }
+
+    androidTarget {
+        publishLibraryVariants("release", "debug")
+    }
     
 //    listOf(
 //        iosX64(),
