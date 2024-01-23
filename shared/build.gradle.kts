@@ -1,6 +1,20 @@
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
+    id("maven-publish")
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("myLibraryPublication") {
+            // Adjust this to include the components you want to publish
+            from(components["kotlin"])
+
+            groupId = "com.example.messaging_database" // Adjust to your group ID
+            artifactId = "mylibrary" // Name of your library
+            version = "1.0.3" // Version of your library
+        }
+    }
 }
 
 kotlin {
